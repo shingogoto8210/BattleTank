@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShotShell : MonoBehaviour
 {
@@ -10,7 +11,13 @@ public class ShotShell : MonoBehaviour
     private bool canshot;
     private float timer;
     public int shotCount;
+    [SerializeField] private Text shellLabel;
 
+
+    private void Start()
+    {
+        shellLabel.text = "砲弾：" + shotCount; 
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -27,6 +34,7 @@ public class ShotShell : MonoBehaviour
             Destroy(shell, 3.0f);
             AudioSource.PlayClipAtPoint(shotSound, transform.position);
             shotCount -= 1;
+            shellLabel.text = "砲弾：" + shotCount;
             timer = 0;
             canshot = false;
         }
