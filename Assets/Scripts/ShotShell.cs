@@ -12,11 +12,13 @@ public class ShotShell : MonoBehaviour
     private float timer;
     public int shotCount;
     [SerializeField] private Text shellLabel;
+    public int shotMaxCount = 20;
 
 
     private void Start()
     {
-        shellLabel.text = "砲弾：" + shotCount; 
+        shellLabel.text = "砲弾：" + shotCount;
+        shotCount = shotMaxCount;
     }
     void Update()
     {
@@ -38,7 +40,15 @@ public class ShotShell : MonoBehaviour
             timer = 0;
             canshot = false;
         }
+    }
 
+    public void Addshell(int amount)
+    {
+        shotCount += amount;
 
+        if(shotCount > shotMaxCount)
+        {
+            shotCount = shotMaxCount;
+        }
     }
 }
