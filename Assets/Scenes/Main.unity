@@ -421,8 +421,9 @@ GameObject:
   - component: {fileID: 209115361}
   - component: {fileID: 209115360}
   - component: {fileID: 209115359}
+  - component: {fileID: 209115363}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: ShellItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,7 +437,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209115358}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -460,7 +461,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 104cf98915d66ce4fa2dbe8c3cfc1e5e, type: 2}
+  - {fileID: 2100000, guid: deede9009b774a84ba1360c1990bcc65, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -503,6 +504,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209115363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209115358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e836650b1d6ed7145a0aeb9f1de8c4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getSound: {fileID: 8300000, guid: 75691eb2ac6c3564faa0b5cf10898ce5, type: 3}
+  effectPrefab: {fileID: 6298143956915193526, guid: a62a10f48b3a75c4da312fdc9041fccb,
+    type: 3}
 --- !u!1 &209637261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,6 +1679,7 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: fbca641ebd32c6f4795a42d105b72d9c, type: 3}
   shotCount: 20
   shellLabel: {fileID: 1261960790}
+  shotMaxCount: 20
 --- !u!1 &1177769386
 GameObject:
   m_ObjectHideFlags: 0

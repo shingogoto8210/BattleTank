@@ -50,5 +50,7 @@ public class ShotShell : MonoBehaviour
         {
             shotCount = shotMaxCount;
         }
+        shellLabel.text = "砲弾：" + shotCount;
+
     }
 }

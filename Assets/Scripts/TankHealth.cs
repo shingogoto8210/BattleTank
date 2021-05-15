@@ -10,10 +10,12 @@ public class TankHealth : MonoBehaviour
     [SerializeField] private GameObject effectPrefab2;
     public int tankHP;
     [SerializeField] private Text HpLabel;
+    public int HpMaxCount = 20;
 
 
     private void Start()
     {
+        tankHP = HpMaxCount;
         HpLabel.text = "HP:" + tankHP;
     }
     private void OnTriggerEnter(Collider other)
@@ -53,5 +55,17 @@ public class TankHealth : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+    }
+
+    public void AddHp(int amount)
+    {
+        tankHP += amount;
+
+        if (tankHP > HpMaxCount)
+        {
+            tankHP = HpMaxCount;
+        }
+        HpLabel.text = "HP:" + tankHP;
+
     }
 }

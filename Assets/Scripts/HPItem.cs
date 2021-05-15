@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShellItem : MonoBehaviour
+public class HPItem : MonoBehaviour
 {
     [SerializeField] private AudioClip getSound;
     [SerializeField] private GameObject effectPrefab;
-    private ShotShell ss;
-    private int reward = 5;
+
+    private TankHealth th;
+    private int reward = 3;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            ss = GameObject.Find("ShotShell").GetComponent<ShotShell>();
-            ss.Addshell(reward);
+            th = GameObject.Find("Tank").GetComponent<TankHealth>();
+
+            th.AddHp(reward);
+
             Destroy(gameObject);
+
             AudioSource.PlayClipAtPoint(getSound, transform.position);
+
             GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+
             Destroy(effect, 0.5f);
         }
     }
