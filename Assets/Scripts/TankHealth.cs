@@ -2,19 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TankHealth : MonoBehaviour
 {
     [SerializeField] private GameObject effectPrefab1;
     [SerializeField] private GameObject effectPrefab2;
     public int tankHP;
-     
+    [SerializeField] private Text HpLabel;
 
+
+    private void Start()
+    {
+        HpLabel.text = "HP:" + tankHP;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag ("EnemyShell"))
         {
             tankHP -= 1;
+            HpLabel.text = "HP:" + tankHP;
 
             Destroy(other.gameObject);
 
