@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TankHealth : MonoBehaviour
 {
     [SerializeField] private GameObject effectPrefab1;
     [SerializeField] private GameObject effectPrefab2;
     public int tankHP;
+     
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,8 +28,23 @@ public class TankHealth : MonoBehaviour
                 GameObject effect2 = Instantiate(effectPrefab2, transform.position, Quaternion.identity);
                 Destroy(effect2, 1.0f);
 
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                this.gameObject.SetActive(false);
+                Invoke("GotoGameOver",1.5f);
             }
+        }
+    }
+
+    void GotoGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -1)
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
