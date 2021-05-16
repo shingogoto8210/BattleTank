@@ -10,7 +10,7 @@ public class StopAttackItem : MonoBehaviour
 
     private void Update()
     {
-        //Startではだめなのか？？？？？？？？？？？？
+      
         targets = GameObject.FindGameObjectsWithTag("EnemyShotShell");
     }
 
@@ -22,11 +22,10 @@ public class StopAttackItem : MonoBehaviour
             {
                 targets[i].GetComponent<EnemyShotShell>().AddStopTimer(3.0f);
             }
+            Destroy(gameObject);
+            GameObject effect = Instantiate(effectprefab, transform.position, Quaternion.identity);
+            Destroy(effect, 1.0f);
+            AudioSource.PlayClipAtPoint(getsound, transform.position);
         }
-        Destroy(gameObject);
-        GameObject effect = Instantiate(effectprefab,transform.position, Quaternion.identity);
-        Destroy(effect, 1.0f);
-        AudioSource.PlayClipAtPoint(getsound,transform.position);
-
     }
 }

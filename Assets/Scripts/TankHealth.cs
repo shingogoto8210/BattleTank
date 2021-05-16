@@ -11,6 +11,9 @@ public class TankHealth : MonoBehaviour
     public int tankHP;
     public Text HpLabel;
     public int HpMaxCount = 20;
+    public bool ismuteki;
+    public float mutekiTimer;
+
 
 
     private void Start()
@@ -18,8 +21,14 @@ public class TankHealth : MonoBehaviour
         tankHP = HpMaxCount;
         HpLabel.text = "HP:" + tankHP;
     }
+
     private void OnTriggerEnter(Collider other)
     {
+        if(ismuteki == true)
+        {
+            Destroy(other.gameObject);
+            return;
+        }
         if(other.CompareTag ("EnemyShell"))
         {
             tankHP -= 1;
@@ -55,6 +64,16 @@ public class TankHealth : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+        if (ismuteki == true)
+        {
+            mutekiTimer -= Time.deltaTime;
+            if (mutekiTimer <= 0)
+            {
+                Debug.Log("無敵終了");
+                ismuteki = false;
+                mutekiTimer = 0;
+            }
+        }
     }
 
     public void AddHp(int amount)
@@ -67,5 +86,10 @@ public class TankHealth : MonoBehaviour
         }
         HpLabel.text = "HP:" + tankHP;
 
+    }
+
+    public void MutekiTime(float amount)
+    {
+        mutekiTimer += amount;
     }
 }
