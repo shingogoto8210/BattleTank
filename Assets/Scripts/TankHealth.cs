@@ -9,7 +9,7 @@ public class TankHealth : MonoBehaviour
     [SerializeField] private GameObject effectPrefab1;
     [SerializeField] private GameObject effectPrefab2;
     public int tankHP;
-    [SerializeField] private Text HpLabel;
+    public Text HpLabel;
     public int HpMaxCount = 20;
 
 
