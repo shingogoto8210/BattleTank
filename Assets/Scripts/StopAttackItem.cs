@@ -10,8 +10,8 @@ public class StopAttackItem : MonoBehaviour
 
     private void Update()
     {
+        //Startではだめなのか？？？？？？？？？？？？
         targets = GameObject.FindGameObjectsWithTag("EnemyShotShell");
-
     }
 
     private void OnTriggerEnter(Collider other)
