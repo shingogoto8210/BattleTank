@@ -8,11 +8,19 @@ public class EnemyShotShell : MonoBehaviour
     [SerializeField] private GameObject enemyShellPrefab;
     [SerializeField] private AudioClip shotSound;
     private int interval;
+    public float stopTimer = 5.0f;
 
     void Update()
     {
         interval += 1;
-        if(interval % 60 == 0)
+        stopTimer -= Time.deltaTime;
+
+        if(stopTimer < 0)
+        {
+            stopTimer = 0;
+
+        }
+        if(interval % 60 == 0 && stopTimer <= 0)
         {
             GameObject enemyShell = Instantiate(enemyShellPrefab, transform.position,Quaternion.identity);
             Rigidbody enemyShellRb = enemyShell.GetComponent<Rigidbody>();
@@ -20,5 +28,10 @@ public class EnemyShotShell : MonoBehaviour
             AudioSource.PlayClipAtPoint(shotSound, transform.position);
             Destroy(enemyShell, 3.0f);
         }
+    }
+
+    public void AddStopTimer(float amount)
+    {
+        stopTimer += amount;
     }
 }
