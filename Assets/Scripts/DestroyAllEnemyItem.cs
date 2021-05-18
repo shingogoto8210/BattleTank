@@ -4,33 +4,32 @@ using UnityEngine;
 
 public class DestroyAllEnemyItem : MonoBehaviour
 {
-    public GameObject enemyA;
-    public GameObject enemyB;
+    private GameObject[] targets;
 
     [SerializeField] private AudioClip getSound;
     [SerializeField] private GameObject effectPrefab;
     [SerializeField] private GameObject effectPrefab2;
 
-    //破壊した後にアイテムをとったらエラーが起きる！！！！！！！！！！！
+    private void Update()
+    {
+
+        targets = GameObject.FindGameObjectsWithTag("Enemy");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(enemyA);
-            Destroy(enemyB);
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(getSound, transform.position);
             GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
-            GameObject effect2 = Instantiate(effectPrefab2, enemyA.transform.position, Quaternion.identity);
-            GameObject effect3 = Instantiate(effectPrefab2, enemyB.transform.position, Quaternion.identity);
-
-
             Destroy(effect, 0.5f);
-            Destroy(effect2, 0.5f);
-            Destroy(effect3, 0.5f);
-
-
+            for (int i = 0; i < targets.Length; i++)
+            {
+                Destroy(targets[i]);
+                GameObject effect2 = Instantiate(effectPrefab2, targets[i].transform.position, Quaternion.identity);
+                Destroy(effect2, 0.5f);
+            }
         }
     }
 }

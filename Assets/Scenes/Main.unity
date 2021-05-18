@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0
+  m_AmbientIntensity: 0.9
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 209115363}
   m_Layer: 0
   m_Name: ShellItem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 405254156}
   m_Layer: 0
   m_Name: DestroyAllEnemyItem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,8 +921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2300bbd0b62069d46a85f7bafd22ff7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyA: {fileID: 826610762}
-  enemyB: {fileID: 1486408679}
   getSound: {fileID: 8300000, guid: fbca641ebd32c6f4795a42d105b72d9c, type: 3}
   effectPrefab: {fileID: 6298143956915193526, guid: a62a10f48b3a75c4da312fdc9041fccb,
     type: 3}
@@ -1680,7 +1678,7 @@ GameObject:
   - component: {fileID: 808361778}
   m_Layer: 0
   m_Name: NoDestroyItem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3530,7 +3528,7 @@ GameObject:
   - component: {fileID: 1607686271}
   m_Layer: 0
   m_Name: 'HPItem '
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3796,7 +3794,7 @@ GameObject:
   - component: {fileID: 2043550233}
   m_Layer: 0
   m_Name: SpeedUpItem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4016,7 +4014,7 @@ GameObject:
   - component: {fileID: 2100065798}
   m_Layer: 0
   m_Name: StopAttackItem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
