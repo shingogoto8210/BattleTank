@@ -8,6 +8,13 @@ public class DestroyObject : MonoBehaviour
     public int objectHp;
     [SerializeField] private GameObject effectPrefab2;
     [SerializeField] private GameObject[] items;
+    [SerializeField] private int scoreValue;
+    private ScoreManager sm;
+
+    private void Start()
+    {
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +36,7 @@ public class DestroyObject : MonoBehaviour
                 Destroy(this.gameObject);
                 int x = Random.Range(0, items.Length);
                 Vector3 pos = transform.position;
+                sm.AddPoint(scoreValue);
                 if (items.Length != 0)
                 {
                     Instantiate(items[x], new Vector3(pos.x,pos.y + 0.6f,pos.z), Quaternion.identity);
