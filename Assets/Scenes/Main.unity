@@ -446,6 +446,7 @@ MonoBehaviour:
   objectHp: 3
   effectPrefab2: {fileID: 100000, guid: 4cbb34f609dafad4586aaa018b8c2ba0, type: 3}
   items: []
+  scoreValue: 0
 --- !u!65 &209637263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -533,6 +534,7 @@ GameObject:
   - component: {fileID: 453331094}
   - component: {fileID: 453331096}
   - component: {fileID: 453331097}
+  - component: {fileID: 453331098}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -621,6 +623,18 @@ MonoBehaviour:
   HpMaxCount: 20
   ismuteki: 0
   mutekiTimer: 0
+--- !u!114 &453331098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453331092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8052e977bff6c46abdbd1273c6f877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &481209584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1216,7 @@ MonoBehaviour:
   objectHp: 3
   effectPrefab2: {fileID: 100000, guid: 4cbb34f609dafad4586aaa018b8c2ba0, type: 3}
   items: []
+  scoreValue: 0
 --- !u!65 &822018749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1331,6 +1346,7 @@ MonoBehaviour:
   items:
   - {fileID: 7997364670094863432, guid: b541dd19655423f4ca152502d094675d, type: 3}
   - {fileID: 718770989338504120, guid: c6213d9d870be344a984f1e5ea823ba1, type: 3}
+  scoreValue: 200
 --- !u!65 &826610765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1795,6 +1811,7 @@ MonoBehaviour:
   objectHp: 3
   effectPrefab2: {fileID: 100000, guid: 4cbb34f609dafad4586aaa018b8c2ba0, type: 3}
   items: []
+  scoreValue: 0
 --- !u!65 &1177769388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2047,8 +2064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 91.9, y: 51.6}
-  m_SizeDelta: {x: 148.41309, y: 52.355255}
+  m_AnchoredPosition: {x: 136.47, y: 51.6}
+  m_SizeDelta: {x: 237.55469, y: 52.355255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1275699033
 MonoBehaviour:
@@ -2586,6 +2603,7 @@ MonoBehaviour:
   effectPrefab2: {fileID: 100000, guid: 4cbb34f609dafad4586aaa018b8c2ba0, type: 3}
   items:
   - {fileID: 6863120531917606707, guid: a9eaf30228e28234d9ccf058573d4b8d, type: 3}
+  scoreValue: 300
 --- !u!65 &1486408683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2913,10 +2931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorelabel: {fileID: 1275699033}
-  enemyA: {fileID: 826610762}
-  pointA: 100
-  enemyB: {fileID: 1486408679}
-  pointB: 200
 --- !u!4 &1893113092
 Transform:
   m_ObjectHideFlags: 0
@@ -3045,6 +3059,7 @@ MonoBehaviour:
   objectHp: 3
   effectPrefab2: {fileID: 100000, guid: 4cbb34f609dafad4586aaa018b8c2ba0, type: 3}
   items: []
+  scoreValue: 0
 --- !u!65 &2060183596
 BoxCollider:
   m_ObjectHideFlags: 0
