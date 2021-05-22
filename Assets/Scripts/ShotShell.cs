@@ -33,7 +33,7 @@ public class ShotShell : MonoBehaviour
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
             Rigidbody shellRb = shell.GetComponent<Rigidbody>();
             shellRb.AddForce(transform.forward * shotSpeed);
-            Destroy(shell, 3.0f);
+            Destroy(shell, 10.0f);
             AudioSource.PlayClipAtPoint(shotSound, transform.position);
             shotCount -= 1;
             shellLabel.text = "砲弾：" + shotCount;

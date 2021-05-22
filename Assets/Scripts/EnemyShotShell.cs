@@ -30,7 +30,7 @@ public class EnemyShotShell : MonoBehaviour
             Rigidbody enemyShellRb = enemyShell.GetComponent<Rigidbody>();
             enemyShellRb.AddForce(transform.forward * shotSpeed);
             AudioSource.PlayClipAtPoint(shotSound, transform.position);
-            Destroy(enemyShell, 3.0f);
+            Destroy(enemyShell, 10.0f);
         }
     }
 

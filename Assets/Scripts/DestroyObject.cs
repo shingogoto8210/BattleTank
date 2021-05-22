@@ -39,7 +39,7 @@ public class DestroyObject : MonoBehaviour
                 sm.AddPoint(scoreValue);
                 if (items.Length != 0)
                 {
-                    Instantiate(items[x], new Vector3(pos.x,pos.y + 0.6f,pos.z), Quaternion.identity);
+                    Instantiate(items[x], new Vector3(pos.x,pos.y + 1.0f,pos.z), Quaternion.identity);
                 }
             }
         }
