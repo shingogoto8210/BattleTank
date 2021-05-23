@@ -5,12 +5,13 @@ using UnityEngine.AI;
 
 public class ChaseEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject target;
     private NavMeshAgent agent;
+    private GameObject target;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        target = GameObject.Find("Tank");
     }
 
     // Update is called once per frame
